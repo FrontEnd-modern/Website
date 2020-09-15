@@ -1,0 +1,805 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+@font-face {
+    font-family: "Muller";
+    src: url("../fonts/Fontfabric - MullerRegular.eot");
+    src: local("☺"), url("../fonts/Fontfabric - MullerRegular.woff") format("woff"),
+        url("../fonts/Fontfabric - MullerRegular.ttf") format("truetype"),
+        url("../fonts/Fontfabric - MullerRegular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MullerBold";
+    src: url("../fonts/Fontfabric - MullerBold.eot");
+    src: local("☺"), url("../fonts/Fontfabric - MullerBold.woff") format("woff"),
+        url("../fonts/Fontfabric - MullerBold.ttf") format("truetype"),
+        url("../fonts/Fontfabric - MullerBold.svg") format("svg");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin text($fs, $lh, $fw, $col, $font) {
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: $fw;
+    color: $col;
+    font-family: $font;
+}
+
+%title {
+    font-family: Muller;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #000000;
+}
+
+body {
+    zoom: 75%;
+    overflow-x: hidden;
+    min-height: 100%;
+}
+.title {
+    @extend %title;
+}
+
+.back_img {
+    position: absolute;
+}
+
+.wrapper {
+    overflow-x: hidden;
+    min-height: 100%;
+}
+
+.container {
+    max-width: 1135px;
+    margin: 0 auto;
+}
+.header__row {
+    .header__top {
+        padding-top: 55px;
+        display: flex;
+        margin-bottom: 220px;
+
+        .header__logo {
+            @include text(28px, 1.2, 700, white, "Muller");
+        }
+        .header__menu {
+            margin-right: 150px;
+            margin-left: 160px;
+            display: flex;
+            align-items: center;
+            .header__btn {
+                margin-right: 50px;
+
+                @include text(14px, 1.2, 700, #acacc9, "Muller");
+            }
+        }
+
+        .header__telephone {
+            @include text(28px, 1.2, 700, #fff, "Muller");
+        }
+    }
+}
+
+header {
+    background-image: url(../img/background_head.png);
+}
+
+main {
+    margin: 0 auto;
+}
+
+.header__main {
+    .header__data {
+        @include text(32px, 1.2, 700, #fff, "Muller");
+        margin-bottom: 30px;
+    }
+    .header__conf {
+        @include text(52px, 1.2, 700, #fff, "Muller");
+    }
+    .header__startup {
+        background-image: linear-gradient(100deg, #8553be 26%, #d724cd 50%, #8553be 73%);
+
+        @include text(80px, 1.2, 900, #fff, "Muller");
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .header__idea {
+        @include text(52px, 1.2, 700, #8282a2, "Muller");
+        margin-bottom: 85px;
+        margin-left: 260px;
+    }
+}
+.header__button {
+    display: flex;
+    text-align: center;
+    padding-bottom: 135px;
+    justify-content: center;
+}
+.header__signup {
+    width: 362px;
+    height: 76px;
+    background-image: linear-gradient(128deg, #7f12ab 31%, #da16c9 68%);
+    border-radius: 38px;
+    padding: 30px;
+}
+.header__sign {
+    @include text(14px, 1.2, 700, #fff, "Muller");
+}
+.header__img_big {
+    top: 130px;
+    z-index: 2;
+}
+
+.header__img_right {
+    right: 0;
+    width: 328px;
+    height: 900px;
+    opacity: 0.27;
+}
+.header__img_tri {
+    top: 255px;
+    right: 35px;
+}
+
+// second block------------------------------------------------------------------
+
+.meeting__row {
+    display: flex;
+    padding-top: 155px;
+    padding-bottom: 80px;
+}
+.meeting__leftblock {
+    margin-right: 155px;
+}
+.meeting__title {
+    display: flex;
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.meeting__body {
+    p {
+        margin-bottom: 20px;
+        @include text(18px, 1.2, 400, #797c80, "Muller");
+    }
+}
+.meeting__text {
+    @include text(18px, 32px, 400, #797c80, "Muller");
+}
+
+//----------------------------meeting img---------------------------------
+
+.img_dot {
+    margin-right: 25px;
+    opacity: 0.36;
+    font-family: Muller;
+    font-size: 32px;
+    line-height: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: #c915c3;
+    position: relative;
+}
+
+.meeting__img_top {
+    right: -46px;
+    top: 930px;
+}
+.meeting__img_button {
+    right: -40px;
+    top: 930px + 288px;
+}
+.meeting__img_center {
+    width: 212px;
+    height: 609px;
+    opacity: 0.09;
+    left: 745px;
+}
+.meeting__img_tringles {
+    left: 52px;
+    top: 1150px;
+}
+
+//---------------------------------------------------------------------------
+.people {
+    background-color: #fef0ff;
+}
+.people__body {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 80px;
+    justify-content: space-between;
+
+    .people__item1 {
+        background-image: url(../img/face1.png);
+    }
+
+    .people__item2 {
+        background-image: url(../img/face2.png);
+    }
+
+    .people__item3 {
+        background-image: url(../img/face3.png);
+    }
+
+    .people__item4 {
+        background-image: url(../img/face4.png);
+    }
+
+    .people__item5 {
+        background-image: url(../img/face5.png);
+    }
+
+    .people__item6 {
+        background-image: url(../img/face6.png);
+    }
+
+    .people__item7 {
+        background-image: url(../img/face7.png);
+    }
+
+    .people__item8 {
+        background-image: url(../img/face8.png);
+    }
+
+    .people__item9 {
+        background-image: url(../img/face9.png);
+    }
+
+    .people__item10 {
+        background-image: url(../img/face10.png);
+    }
+
+    .people__item11 {
+        background-image: url(../img/face11.png);
+    }
+
+    .people__item12 {
+        background-image: url(../img/face12.png);
+    }
+
+    .people__item13 {
+        background-image: url(../img/face13.png);
+    }
+
+    .people__item14 {
+        background-image: url(../img/face14.png);
+    }
+
+    .people__item15 {
+        background-image: url(../img/face15.png);
+    }
+
+    .people__item16 {
+        background-image: url(../img/face16.png);
+    }
+
+    .people__item17 {
+        background-image: url(../img/face17.png);
+    }
+
+    .people__item18 {
+        background-image: url(../img/face18.png);
+    }
+
+    .people__item19 {
+        background-image: url(../img/face19.png);
+    }
+
+    .people__item20 {
+        background-image: url(../img/face20.png);
+    }
+}
+
+.people__item {
+    position: relative;
+    width: 263px;
+    height: 268px;
+    margin-bottom: 25px;
+}
+
+.people__hover {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background-image: linear-gradient(0deg, #da16c9 0%, #7f12ab 100%);
+    opacity: 0.8;
+    display: none;
+    padding: 35px 25px;
+    p {
+        @include text(16px, 1.2, 400, #fff, "Muller");
+    }
+    span {
+        @include text(24px, 1.2, 700, #fff, "Muller");
+    }
+}
+.people__item:nth-child(4n) {
+    margin-right: 0;
+}
+
+.people__item:hover .people__hover {
+    display: block;
+}
+
+.people__title {
+    padding-top: 80px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+//-------------------------------------------------------------------------
+
+.project__row {
+    padding-top: 120px;
+    display: flex;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+.project__body {
+    margin-left: 75px;
+    min-width: 470px;
+    text-align: center;
+
+    .project__title {
+        margin-top: 90px;
+    }
+
+    .project__text {
+        margin-top: 40px;
+        @include text(20px, 1.2, 400, #000, "Muller");
+        font-style: italic;
+    }
+    .project__name {
+        margin-top: 32px;
+        @include text(18px, 1.2, 700, #000, "Muller");
+    }
+}
+.project__tringl {
+    position: absolute;
+    left: -180px;
+    top: 230px;
+}
+//---------------------------------------------------------------------------
+
+.programm {
+    background-color: #20203a;
+    position: relative;
+}
+.programm__row {
+    padding-bottom: 120px;
+}
+.programm__title {
+    text-align: center;
+    color: #fff;
+    padding: 82px 0 55px 0;
+}
+
+.programm__body {
+    display: flex;
+    justify-content: space-between;
+}
+.programm__text {
+    max-width: 550px;
+    @include text(18px, 26px, 400, #fff, "Muller");
+}
+.absol{
+    position: absolute;
+}
+.programm__tringls_left{
+top: 440px;
+}
+.programm__tringls_right{
+right: 0;
+top: 60px;
+}
+.programm__tringls_big{
+    top: 620px;
+    right: 55px;
+
+}
+
+.quote {
+    background-image: linear-gradient(-72deg, #7f12ab 30%, #da16c9 69%);
+
+}
+
+.quote__row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.quote__quote {
+    padding-top: 76px;
+    @include text(36px, 1.2, 400, #fff, "Muller");
+}
+.quote__name {
+    @include text(20px, 1.2, 700, #fff, "Muller");
+    margin-top: 25px;
+    margin-bottom: 70px;
+}
+//-------------------------------------------PRICE-----------------------------------------
+
+.subscribe__row {
+    display: flex;
+    flex-direction: column;
+}
+.subscribe__title {
+    padding-top: 85px;
+    margin-bottom: 75px;
+    text-align: center;
+}
+
+.subscribe__body {
+    display: flex;
+    margin-bottom: 155px;
+
+    .subscribe__item {
+        display: flex;
+        width: 300px;
+        min-height: 500px;
+        flex: 0 1 auto;
+
+        .subscribe__block {
+            padding: 40px 20px 50px 20px;
+
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            .subscribe__type {
+                @include text(12px, 57px, 800, #000, "Muller");
+                letter-spacing: 0.24em;
+            }
+            .subscribe__old-price {
+                text-decoration: line-through;
+                @include text(20px, 28px, 400, #000, "Muller");
+            }
+            .subscribe__new-price {
+                @include text(30px, 40px, 700, #000, "MullerBold");
+                margin-bottom: 20px;
+            }
+            .subscribe__deskription {
+                @include text(14px, 24px, 400, #7b7e82, "Muller");
+                flex: 1 1 auto;
+            }
+            .subscribe__button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 35px;
+                margin: auto;
+                width: 208px;
+                height: 47px;
+                & a {
+                    top: 10px;
+                    color: #fff;
+                }
+                background-image: linear-gradient(0deg, #7f12ab 0%, #da16c9 100%);
+                box-shadow: -18px 32px 76px 0px rgba(0, 0, 0, 0.3);
+                border-radius: 23.5px;
+                font-family: "Muller";
+            }
+        }
+    }
+    .subscribe__block:hover {
+        background-image: linear-gradient(-43deg, #7f12ab 11%, #da16c9 88%);
+        box-shadow: -18px 32px 76px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+        .subscribe__deskription,
+        .subscribe__new-price,
+        .subscribe__old-price,
+        .subscribe__type {
+            color: #fff;
+        }
+        .subscribe__button {
+            background-image: none;
+            background-color: #fff;
+            & a {
+                color: #8b13af;
+            }
+        }
+    }
+}
+//---------------------------------------------MOBILE------------------------------------------
+
+.mobile__row {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-bottom: 125px;
+    .mobile__img-tel {
+    }
+    .mobile__img-screen {
+        position: absolute;
+        z-index: 3;
+        left: 15px;
+        top: 10px;
+    }
+
+    .mobile__body {
+        margin-left: 55px;
+        display: flex;
+        flex-direction: column;
+
+        .mobile__title {
+            line-height: 1.5;
+        }
+
+        .mobile__desk {
+            margin-bottom: 10px;
+            @include text(24px, 1.2, 400, #000, "Muller");
+        }
+        .mobile__ul {
+            @include text(16px, 44px, 400, #000, "Muller");
+            & li {
+                background: url(../img/check.png) -40px 10px no-repeat;
+                padding-left: 50px;
+            }
+        }
+    }
+}
+
+.month__row {
+    display: flex;
+    flex-direction: column;
+}
+.month__title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.month__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+
+    .month__item {
+        flex: 0 1 33.333%;
+        margin-bottom: 85px;
+    }
+    .month__icon {
+        margin-bottom: 20px;
+    }
+    .month__text {
+        text-align: center;
+        @include text(16px, 1.2, 400, #000, "Muller");
+    }
+}
+//------------------------------------------------------------------------------------
+.callback {
+    background-color: #fef0ff;
+    position: relative;
+}
+.callback__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.callback__title {
+    padding-top: 140px;
+}
+.callback__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & a {
+        @include text(16px, 1.2, 700, #fff, "Muller");
+    }
+
+    width: 258px;
+    height: 55px;
+    background-color: #666;
+    background-image: linear-gradient(0deg, #7f12ab 0%, #da16c9 100%);
+    box-shadow: -18px 32px 76px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 27.5px;
+
+    margin: 40px auto 100px auto;
+}
+
+.tringl__month__left_button {
+    left: -75px;
+    bottom: -60px;
+}
+.tringl__month__left_top {
+    z-index: 2;
+    left: -75px;
+    bottom: 180px;
+}
+//----------------------------------------------------
+
+.statistic {
+    background-image: url(../img/statistic__background.png);
+}
+
+.statistic__row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.statistic__title {
+    color: #fff;
+    padding: 100px 0 67px 0;
+}
+
+.statistic__body {
+    display: flex;
+    justify-content: space-around;
+    flex: 0 1 33.333%;
+
+    .statistic__item {
+        .statistic__number {
+            color: #fff;
+        }
+        .statistic__desk {
+            @include text(16px, 1.2, 400, #fff, "Muller");
+            padding-bottom: 90px;
+        }
+    }
+}
+//------------------------------------------------------------------
+
+.regist {
+    background-color: #ffffff;
+    background-image: linear-gradient(39deg, #da16c9 33%, #7f12ab 66%);
+}
+
+.regist__row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.regist__title {
+    color: #fff;
+    padding: 106px 0 60px 0;
+}
+
+.regist__body {
+    display: flex;
+    margin-bottom: 115px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    & input {
+        width: 260px;
+        height: 63px;
+        background-color: #ffffff;
+        border: 1px solid #dedede;
+        border-radius: 31.5px;
+        @include text(14px, 1.2, 400, #7f7f7f, "Muller");
+        padding-left: 38px;
+    }
+    & button {
+        width: 260px;
+        height: 63px;
+        background-color: #000;
+        @include text(14px, 1.2, 700, #fff, "Muller");
+
+        border-radius: 31.5px;
+    }
+   
+}
+//---------------------------------------------------------------------------
+
+.partners{
+    background-color: #f3f3f3;
+}
+.partners__row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.partners__title {
+    padding: 75px 0 50px 0;
+}
+
+.partners__body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 930px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+//----------------------------------------------------------------------------
+.footer{
+    background-color: #000;
+}
+
+.footer__row {
+display: flex;
+justify-content: space-around;
+text-align: center;
+}
+.footer__item {
+    @include text(20px,1.4 ,400 ,#fff ,'Muller' );
+   
+}
+.footer__issues {
+    padding: 48px 0 30px 0;
+}
+.footer__contact {
+    font-weight: 700;
+    margin-bottom: 40px;
+}
